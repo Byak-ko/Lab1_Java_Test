@@ -14,7 +14,9 @@ public class Main {
         for (int i = 0; i < numThreads; i++) {
             System.out.print("Enter the number of step for thread " + i + ": ");
             int step = scanner.nextInt();
-            bThreads[i] = new BreakThread((i+1)*1000);
+            System.out.print("Enter the number of time work for thread " + i + ": ");
+            int time = scanner.nextInt();
+            bThreads[i] = new BreakThread((time-1)*1000);
             threads[i] = new MainThread(i, step, bThreads[i]);
         }
 

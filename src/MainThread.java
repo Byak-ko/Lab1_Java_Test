@@ -21,6 +21,11 @@ public class MainThread extends Thread {
             i++;
             termCount++;
             isStop = breakThread.isCanBreak();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         } while (!isStop);
         System.out.println(id + " - Sum: " + sum + ", Steps: " + termCount);
     }

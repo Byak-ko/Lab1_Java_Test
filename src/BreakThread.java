@@ -1,9 +1,15 @@
 public class BreakThread implements Runnable{
     private boolean canBreak = false;
+    private final int time;
+
+    public BreakThread(int time) {
+        this.time = time;
+    }
+
     @Override
     public void run() {
         try {
-            Thread.sleep(3 * 1000);
+            Thread.sleep(time);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
